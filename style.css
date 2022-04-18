@@ -1,0 +1,23 @@
+.loginbutton {
+	background-color: white;
+	border-style: solid;
+	border-width: 0.5px;
+	border-color: rgba(0, 0, 255, 0.7);
+	height: 36px;
+	width: 160px;
+	transition-duration: 0.5s;
+}
+.loginbutton:hover {
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 255, 0.7);
+}
+.loginbutton:active {
+	transition-duration: 0.2s;
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 230, 1);
+	background-color: lightgray;
+}
+.nextbutton {
+	background-color: lightblue;
+}
+.nextbutton:hover {
+	background-color: blue;
+}

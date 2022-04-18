@@ -1,0 +1,75 @@
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap" rel="stylesheet">
+</head>
+<body style="outline: none;">
+<style>
+body {
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+.loginbutton {
+	background-color: white;
+	border-style: solid;
+	border-width: 0.5px;
+	border-color: rgba(0, 0, 255, 0.7);
+	height: 36px;
+	width: 160px;
+	transition-duration: 0.5s;
+}
+.loginbutton:hover {
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 255, 0.7);
+}
+.loginbutton:active {
+	transition-duration: 0.2s;
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 230, 1);
+	background-color: lightgray;
+}
+.nextbutton {
+	background-color: #669eff;
+	transition-duration: 0.2s;
+}
+.nextbutton:hover {
+	background-color: #3a81fc;
+}
+</style>
+<img id="loading" src="Loading.gif" style="position: fixed; top: 35%; left: 45%; z-index: 1;" hidden></img>
+<h1 id="h0" style="font-family: fredoka; position: absolute; left: 38%; top: 0%;">Create a new account</h1><br><br><br>
+<h2 style="font-family: fredoka; position: absolute; left: 42%; top: 170px;">Start with an email</h2>
+<input id="email" type='email' placeholder='Email' style='font-family: Fredoka, sans-serif; position: absolute; height: 40px; font-size: 26px; font-family: Fredoka; width: 400px; left: 35%; top: 40%;'>
+<button onclick="document.getElementById('h1').scrollIntoView({behavior: 'smooth', inline: 'center'});" class="nextbutton" style="position: absolute; left: 45%; top: 60%; height: 50px; width: 150px; border-style: solid; border-color: black; border-radius: 5px; font-family: fredoka; font-size: 30px;">Next ></button>
+
+<h1 id="h1" style="font-family: fredoka; position: absolute; left: 140%; top: 0%; width: 500px;">Create a new account</h1><br><br><br>
+<h2 style="font-family: fredoka; position: absolute; left: 150%; top: 120px; width: 500px;">Username</h2>
+<input id="username" type='text' placeholder='Username' style='font-family: Fredoka, sans-serif; position: absolute; height: 40px; font-size: 26px; font-family: Fredoka; width: 400px; left: 140%; top: 30%;'>
+<h2 style="font-family: fredoka; position: absolute; left: 150%; top: 220px; width: 500px;">Name</h2>
+<input id="name" type='text' placeholder='Name' style='font-family: Fredoka, sans-serif; position: absolute; height: 40px; font-size: 26px; font-family: Fredoka; width: 400px; left: 140%; top: 45%;'>
+<h2 style="font-family: fredoka; position: absolute; left: 150%; top: 320px; width: 500px;">Birthday</h2>
+<input id="bday" type='date' placeholder='Birth Date' style='font-family: Fredoka, sans-serif; position: absolute; height: 40px; font-size: 26px; font-family: Fredoka; width: 400px; left: 140%; top: 62%;'>
+<button onclick="document.getElementById('h2').scrollIntoView({behavior: 'smooth', inline: 'center'});" class="nextbutton" style="position: absolute; left: 150%; top: 75%; height: 50px; width: 150px; border-style: solid; border-color: black; border-radius: 5px; font-family: fredoka; font-size: 30px;">Next ></button>
+
+<h1 id="h2" style="font-family: fredoka; position: absolute; left: 240%; top: 0%; width: 500px;">Create a new account</h1><br><br><br>
+<h2 style="font-family: fredoka; position: absolute; left: 250%; top: 120px; width: 1000px;">Password</h2>
+<input id="password" type='password' placeholder='Password' style='font-family: Fredoka, sans-serif; position: absolute; height: 40px; font-size: 26px; font-family: Fredoka; width: 400px; left: 240%; top: 30%;'>
+<h2 style="font-family: fredoka; position: absolute; left: 250%; top: 220px; width: 1000px;">Confirm Password</h2>
+<p id="pwdnomatch" style="color: red; position: absolute; left: 250%; top: 50%; width: 1000px;" hidden>Password does not match</p>
+<input id="confirmPassword" type='password' placeholder='Confirm Password' style='font-family: Fredoka, sans-serif; position: absolute; height: 40px; font-size: 26px; font-family: Fredoka; width: 400px; left: 240%; top: 45%;'>
+<button onclick="document.getElementById('h3').scrollIntoView({behavior: 'smooth', inline: 'center'});" class="nextbutton" style="position: absolute; left: 250%; top: 75%; height: 50px; width: 150px; border-style: solid; border-color: black; border-radius: 5px; font-family: fredoka; font-size: 30px;">Next ></button>
+
+
+<h1 id="h3" style="font-family: fredoka; position: absolute; left: 340%; top: 0%; width: 500px;">Create a new account</h1><br><br><br>
+<h2 style="font-family: fredoka; position: absolute; left: 350%; top: 120px; width: 1000px;">Profile Picture</h2>
+<input id="pfp" type='file' onchange="openfile(document.getElementById('pfp').files[0])" placeholder='file' style='font-family: Fredoka, sans-serif; position: absolute; height: 40px; font-size: 26px; font-family: Fredoka; width: 400px; left: 340%; top: 30%;'>
+<h2 style="font-family: fredoka; position: absolute; left: 350%; top: 220px; width: 1000px;">Preview</h2>
+<p style="position: absolute; left: 350%; top: 50%; width: 1000px;">Image </p>
+<img id="pfppreview" style="position: absolute; left: 350%; top: 60%; width: 60px; height: 60px;"></img>
+<button onclick="createAccount()" class="nextbutton" style="position: absolute; left: 350%; top: 75%; height: 50px; width: 150px; border-style: solid; border-color: black; border-radius: 5px; font-family: fredoka; font-size: 30px;">Next ></button>
+
+
+<script src="script.js"></script>
+<link href="style.css" rel="stylesheet">
+<script type="module" src="module-script.js"></script>
+</body>
+</html>
