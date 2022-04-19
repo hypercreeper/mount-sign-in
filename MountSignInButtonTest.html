@@ -1,0 +1,23 @@
+<html>
+	<head>
+	<script>
+	var signedin = false;
+	</script>
+	</head>
+	<body>
+		<button class="m-signin">
+		</button>
+				<script src="platform.js"></script>
+		<script type="module" src="module-platform.js"></script>
+		<script>
+		function SignedIn(profile) {
+		console.warn("signed in");
+			console.log(profile.Name);
+			console.log(profile.Email);
+			console.log(profile.UserI);
+			console.log(profile.ProfilePicture);
+			console.log(profile.Username);
+		}
+		</script>
+	</body>
+</html>
